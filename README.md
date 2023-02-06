@@ -1,27 +1,19 @@
 # MyAngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+Install Angular CLI: npm install -g @angular/cli
+Create new app: ng new my_app
+Create new component: ng generate component <component-name> or ng g c <component-name>
+Create new component: ng generate module <module-name> or ng g m <module-name>
+Create new directive: ng generate directive <directive-name> or ng g d <directive-name>
+Create new service: ng generate directive <service-name> or ng g d <service-name>
+Compile and run application: ng server
+Run app at specific port: ng serve -- port 4300
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Basic info
+* TypeScript is the core of Angular, being the language upon which Angular
+is written. 
+* Angular lends itself to maintenance ease with its component and class-based
+system, modular building, hierarchical structure, and simple, declarative
+templates.
+* It also configures Jasmine and Karma for unit tests and TypeScript complier to transpile
+TypeScript file to JavaScript. 
