@@ -1,6 +1,6 @@
 # MyAngularApp
 
-Install Angular CLI: npm install -g @angular/cli
+- Install Angular CLI: npm install -g @angular/cli
 - Create new app: ng new my_app
 - Create new component: ng generate component <component-name> or ng g c <component-name>
 - Create new component: ng generate module <module-name> or ng g m <module-name>
