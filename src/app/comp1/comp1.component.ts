@@ -10,4 +10,5 @@ export class Comp1Component {
     title: 'Component 1',
     description: 'This is first component'
   }
+  btnHeight: number = 300
 }
