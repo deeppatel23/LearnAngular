@@ -1,7 +1,6 @@
 <p>comp1 works!</p>
 
 
-<h1>Example of Event Binding</h1>
-<button (click)="compClick()" >
-    Component 1 Click
-</button >
+<h1>Two-way Binding</h1>
+<input type="text" [(ngModel)]='name' />
+<h2>{{name}}</h2>

@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./comp1.component.css']
 })
 export class Comp1Component {
-  compClick(){
-    console.log('Component1 clicked!')
-  }
+  name:string = 'deep'
 }
