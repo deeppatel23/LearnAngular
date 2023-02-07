@@ -1,27 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child-component',
   styleUrls: ['./child-component.component.css'],
   template: `
-            <h3> {{_name}} </h3>
+            <button (click)="valueChanged()">Count+1</button>
             `
 })
-export class ChildComponentComponent implements OnInit{
-  @Input() greetMessage: string = "Child: No message found";
-  _name:string = "";
-  constructor() {
+export class ChildComponentComponent {
 
-  }
-  ngOnInit() {
-  }
-
-  @Input()
-  set Name(name:string) {
-    this._name =  (name && name.trim()) || 'got null string';
-  }
-
-  get Name() {
-    return this._name;
+  @Output() valueChange = new EventEmitter();
+  counter: number = 0;
+  valueChanged() {
+    this.counter = this.counter + 1;
+    this.valueChange.emit(this.counter);
   }
 }
