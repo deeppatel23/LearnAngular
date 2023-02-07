@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./comp1.component.css']
 })
 export class Comp1Component {
-  comp = {
-    title: 'Component 1',
-    description: 'This is first component'
+  compClick(){
+    console.log('Component1 clicked!')
   }
-  btnHeight: number = 300
 }
