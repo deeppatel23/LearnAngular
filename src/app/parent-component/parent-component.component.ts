@@ -4,17 +4,32 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-parent-component',
   styleUrls: ['./parent-component.component.css'],
   template: `
-            <h1>Hello {{message}}</h1>
-            <app-child-component (valueChange)="displayCounter($event)"> </app-child-component>
-            `
+  <h3>Parent Component</h3>
+  <app-child-component [selectedUser]="selectedUser" (updateUser)="updateUser($event)"></app-child-component>
+  <br>
+  <table>
+    <tr *ngFor="let user of users">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td><button (click)="editUser(user)">Edit</button></td>
+    </tr>
+  </table>
+`
 })
-export class ParentComponentComponent implements OnInit{
-  ngOnInit() {
-    
+export class ParentComponentComponent {
+  users = [
+    { name: 'John Doe', email: 'john@doe.com' },
+    { name: 'Jane Doe', email: 'jane@doe.com' }
+  ];
+  selectedUser:any;
+
+  editUser(user:any) {
+    this.selectedUser = user;
   }
 
-  message: string = "I am parent";
-  displayCounter(count: number) {
-    console.log(count);
+  updateUser(user:any) {
+    this.selectedUser = null;
+    let index = this.users.findIndex(u => u.email === user.email);
+    this.users[index] = user;
   }
 }

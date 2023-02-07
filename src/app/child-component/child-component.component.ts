@@ -4,15 +4,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'app-child-component',
   styleUrls: ['./child-component.component.css'],
   template: `
-            <button (click)="valueChanged()">Count+1</button>
-            `
+    <h3 *ngIf="selectedUser">Edit User</h3>
+    <form *ngIf="selectedUser">
+      <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="selectedUser.name" name="name">
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="selectedUser.email" name="email">
+      </div>
+      <button (click)="update()">Update</button>
+    </form>
+  `
 })
 export class ChildComponentComponent {
+  @Input() selectedUser:any;
+  @Output() updateUser = new EventEmitter<any>();
 
-  @Output() valueChange = new EventEmitter();
-  counter: number = 0;
-  valueChanged() {
-    this.counter = this.counter + 1;
-    this.valueChange.emit(this.counter);
+  update() {
+    this.updateUser.emit(this.selectedUser);
   }
 }
