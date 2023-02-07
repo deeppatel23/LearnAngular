@@ -1,27 +1,13 @@
 # MyAngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+component init: https://github.com/deeppatel23/LearnAngular/commit/5da1c9fe6630f7ceab4b36c55811a43b4448ca69
 
-## Development server
+interpolation: https://github.com/deeppatel23/LearnAngular/commit/b6a278c139ebc66c03b5ba459e22fbb03c0f0ef0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+property binding: https://github.com/deeppatel23/LearnAngular/commit/0c06550ee24d60e4220e0cd78db7bb594bd7c574 
 
-## Code scaffolding
+event binding: https://github.com/deeppatel23/LearnAngular/commit/a7cec89bab055719a3fc29b5b71ebb8f1a7f861f 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+two way binding (method 1): https://github.com/deeppatel23/LearnAngular/commit/3bbfce7335fb596b409ae8e52c84287d22c65751
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+two way binding (method 2): https://github.com/deeppatel23/LearnAngular/commit/f864e43bba64432404fe5bb07fe1714cb61be2b7
