@@ -11,7 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       color: red;
     }
   `],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
   title = 'my-angular-app';
