@@ -1,35 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildComponentComponent } from '../child-component/child-component.component';
 
 @Component({
   selector: 'app-parent-component',
   styleUrls: ['./parent-component.component.css'],
   template: `
-  <h3>Parent Component</h3>
-  <app-child-component [selectedUser]="selectedUser" (updateUser)="updateUser($event)"></app-child-component>
-  <br>
-  <table>
-    <tr *ngFor="let user of users">
-      <td>{{user.name}}</td>
-      <td>{{user.email}}</td>
-      <td><button (click)="editUser(user)">Edit</button></td>
-    </tr>
-  </table>
-`
+    <app-child-component></app-child-component>
+    <button (click)="sendMessage()">Send Message</button>
+  `
 })
 export class ParentComponentComponent {
-  users = [
-    { name: 'John Doe', email: 'john@doe.com' },
-    { name: 'Jane Doe', email: 'jane@doe.com' }
-  ];
-  selectedUser:any;
+  @ViewChild(ChildComponentComponent, { static: false }) childComponent: any;
 
-  editUser(user:any) {
-    this.selectedUser = user;
-  }
-
-  updateUser(user:any) {
-    this.selectedUser = null;
-    let index = this.users.findIndex(u => u.email === user.email);
-    this.users[index] = user;
+  sendMessage() {
+    console.log(`Message: ${this.childComponent.messageInput.nativeElement.value}`);
   }
 }
