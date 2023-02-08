@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { SquarePipe } from './custom-pipe';
 
 @Component({
   selector: 'app-root',
-  template: `{{productName | uppercase}} = {{productPrice | currency:'INR':'symbol-narrow':'3.2-2'}}`
+  template: `
+    <p>{{ 2 | square }}</p>
+    <p>{{ 4 | square }}</p>
+  `
 
 })
 export class AppComponent {
-  title = 'my-angular-app';
-  productName = 'Angular course at ';
-  productPrice = 990;
 }
