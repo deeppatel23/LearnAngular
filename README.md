@@ -1,27 +1,16 @@
-# MyAngularApp
+# Pipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+Angular provides several built-in pipes that can be used to format and transform data in templates. Here are some of the most commonly used ones:
 
-## Development server
+- date: formats a date to a string based on a specified format
+- async: subscribes to an Observable or Promise and returns the latest value when it emits
+- number: formats a number as text with a specified format
+- currency: formats a number as a currency
+- percent: formats a number as a percentage
+- json: formats an object as a JSON string
+- slice: extracts a part of an array or string and returns a new array or string
+- lowercase: formats a string as lowercase text
+- uppercase: formats a string as uppercase text
+- titlecase: formats a string as titlecase text
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You can use these pipes in your templates by applying them to an expression within the double curly brace syntax: {{ expression | pipeName }}. For example, {{ dateValue | date }} would format the dateValue expression as a date string using the date pipe.
