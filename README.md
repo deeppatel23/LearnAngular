@@ -1,27 +1,15 @@
-# MyAngularApp
+# Template Driven Forms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+Template-driven forms are normal forms on which you use Angular directives to enable Angular features such as two-way data binding, change notification, validations, and so on.
 
-## Development server
+In Angular, ngModel is a directive that allows two-way data binding between a form control and a model. The ngModel directive can be used in different ways, with or without square brackets or parentheses, as follows:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ngModel: This is used when you want to bind the value of a form control to a property in the component class, but without two-way data binding.
 
-## Code scaffolding
+[ngModel]: This is used when you want to bind the value of a form control to a property in the component class and also receive updates from the view. The square brackets indicate that this is a one-way binding from the component to the view.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[(ngModel)]: This is used when you want to bind the value of a form control to a property in the component class with two-way data binding. The square brackets indicate that this is a one-way binding from the component to the view, and the parentheses indicate that this is a one-way binding from the view to the component.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Here's an example to illustrate the differences:
+```<input [(ngModel)]="name">```
+In this example, the name property in the component class is bound to the value of the input control, with two-way data binding. Any changes to the input control will be reflected in the name property, and any changes to the name property will be reflected in the input control.
