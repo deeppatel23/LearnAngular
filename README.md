@@ -52,3 +52,4 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 ```
+HashLocationStrategy: This is the default route strategy in Angular, which uses the # symbol in the URL to specify the route. For example, http://example.com/#/home. The # symbol is not sent to the server, so this strategy works with any server-side technology.
