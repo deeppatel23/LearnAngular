@@ -1,27 +1,54 @@
-# MyAngularApp
+# Routing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+In Angular, routes are used to navigate between different components in your application. You can create routes using the RouterModule and the Routes array. Here's an example of how to create routes in Angular:
 
-## Development server
+* Import the RouterModule and Routes array in your module:
+```import { RouterModule, Routes } from '@angular/router';```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Define an array of routes, where each route is defined as an object with a path and a component property:
+```
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent }
+];
+```
+* In the imports array of your module, add the RouterModule.forRoot(routes) method:
+```
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  ...
+})
+```
 
-## Code scaffolding
+* In your component's template, add the <router-outlet></router-outlet> directive, which acts as a placeholder for the component that is associated with the currently active route:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+<nav>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/contact">Contact</a>
+</nav>
+<router-outlet></router-outlet>
+```
 
-## Build
+* To navigate to a specific route, use the routerLink directive in your template, or programmatically navigate using the Router service in your component:
+```
+constructor(private router: Router) {}
+goToAbout() {
+  this.router.navigate(['/about']);
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* In Angular, you can set the default route to the HomeComponent by adding a catch-all route at the end of the Routes array, with a path of an empty string ('') or '**':
+```
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];
+```
