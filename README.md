@@ -74,3 +74,7 @@ Dynamic route parameters allow you to pass values from the URL to your component
   the you will get this error: Object is possibly 'null'.
 * The error "Object is possibly 'null'" occurs because the ActivatedRoute object may not be available at the time of retrieval. To handle this error, you can use the first() operator from the rxjs library to ensure that the ActivatedRoute object is available before attempting to retrieve the id value.
 * In this updated code, the route.params property is a Observable that emits the route parameters whenever the parameters change. The first() operator is used to retrieve the first emitted value and then the subscribe method is used to retrieve the id value. This ensures that the id value is only retrieved once the ActivatedRoute object is available.
+
+Navigating using code
+* You can navigate to a different route in Angular using the Router service. The Router service provides methods for navigating to different routes in your application, such as navigate, navigateByUrl, and navigateByData
+* In the above example, the HomeComponent has a button that when clicked will navigate to the /product/42 route. The Router service is injected into the HomeComponent in the constructor, and the navigate method is used to navigate to the desired route. The first argument of the navigate method is an array that represents the path to the desired route, in this case ['/product', 42].
