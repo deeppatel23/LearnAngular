@@ -53,3 +53,11 @@ const routes: Routes = [
 ];
 ```
 HashLocationStrategy: This is the default route strategy in Angular, which uses the # symbol in the URL to specify the route. For example, http://example.com/#/home. The # symbol is not sent to the server, so this strategy works with any server-side technology.
+
+PathLocationStrategy: This strategy uses the path in the URL to specify the route. For example, http://example.com/home. This strategy requires server-side support, as the full URL path must be mapped to the correct route on the server.
+
+Nowadays, the PathLocationStrategy is the preferred route strategy for Angular applications, as it provides a cleaner URL structure and is better suited for search engine optimization (SEO).
+
+However, the choice of route strategy depends on the specific requirements of your application and the hosting environment you are using. If your application is hosted on a server that doesn't support the full URL path, you may need to use the HashLocationStrategy.
+
+In either case, it's important to understand the trade-offs and to choose the route strategy that best fits your needs.

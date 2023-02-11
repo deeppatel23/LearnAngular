@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -32,8 +32,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    // Use HashLocationStrategy
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    // Use PathLocationStrategy
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
