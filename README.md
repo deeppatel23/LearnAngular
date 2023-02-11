@@ -78,3 +78,6 @@ Dynamic route parameters allow you to pass values from the URL to your component
 Navigating using code
 * You can navigate to a different route in Angular using the Router service. The Router service provides methods for navigating to different routes in your application, such as navigate, navigateByUrl, and navigateByData
 * In the above example, the HomeComponent has a button that when clicked will navigate to the /product/42 route. The Router service is injected into the HomeComponent in the constructor, and the navigate method is used to navigate to the desired route. The first argument of the navigate method is an array that represents the path to the desired route, in this case ['/product', 42].
+
+Query Parameters
+* You can pass query parameters to a route in Angular using the queryParams property of the NavigationExtras object when calling the navigate method of the Router service.

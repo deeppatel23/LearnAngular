@@ -13,11 +13,19 @@ export class ProductComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
+  //for navigating using url parameters
+  // ngOnInit() {
+  //   this.route.params
+  //     .pipe(first())
+  //     .subscribe(params => {
+  //       this.id = +params['id'];
+  //     });
+  // }
+
+  //for navigativg using query paramters
   ngOnInit() {
-    this.route.params
-      .pipe(first())
-      .subscribe(params => {
-        this.id = +params['id'];
-      });
+    this.route.queryParams.subscribe(params => {
+      this.id = +params['id'];
+    });
   }
 }

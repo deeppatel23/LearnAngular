@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,18 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router: Router) {}
 
+  //for Navigating using code
+  // goToProduct() {
+  //   this.router.navigate(['/product', 42]);
+  // }
+
+  //for query parameters
   goToProduct() {
-    this.router.navigate(['/product', 42]);
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: 42,
+      }
+    };
+    this.router.navigate(['/product'], navigationExtras);
   }
 }
