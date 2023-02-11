@@ -35,6 +35,12 @@ export class AppComponent {
       email: ['', [Validators.required, Validators.email]],
       age:  [Validators.required, this.validateAge.bind(this, 18, 100)]
     });
+
+    this.form.setValue({
+      name: 'Temp name',
+      email: 'Temp email',
+      age: '0'
+    })
   }
 
   validateAge(min: number, max: number, control: FormControl) {
