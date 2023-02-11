@@ -10,9 +10,12 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ProductComponent } from './product/product.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth-guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent }, 
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -35,10 +38,7 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [
-    // Use PathLocationStrategy
-    { provide: LocationStrategy, useClass: PathLocationStrategy }
-  ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 

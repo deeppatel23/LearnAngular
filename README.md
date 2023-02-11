@@ -81,3 +81,11 @@ Navigating using code
 
 Query Parameters
 * You can pass query parameters to a route in Angular using the queryParams property of the NavigationExtras object when calling the navigate method of the Router service.
+
+Route Guards
+* Route guards in Angular are used to protect routes from unauthorized access. They allow you to define conditions that must be met before a user is allowed to access a particular route. This helps ensure that your application remains secure by controlling access to sensitive data. There are different types of route guards in Angular, including:
+* CanActivate - Used to prevent access to a route if certain conditions are not met.
+* CanActivateChild - Used to prevent access to child routes of a particular route.
+* CanDeactivate - Used to prevent a user from navigating away from a route if certain conditions are not met.
+* Resolve - Used to pre-fetch data before a route is activated.
+* In this code, the AuthGuard is included in the providers array and added to the canActivate property of the HomeComponent route. This means that the AuthGuard will be used to protect the HomeComponent route and prevent unauthorized access.
