@@ -5,3 +5,7 @@ A FormGroup is a collection of FormControl instances that are grouped together t
 FormBuilder is a utility class that helps you create instances of FormControl and FormGroup in a concise and readable way. Instead of manually creating instances of FormControl and FormGroup and setting their properties, you can use the methods provided by the FormBuilder to create the form. This makes the code more readable and easier to maintain.
 
 The FormBuilder class is a convenient way to create forms, especially when you need to create complex forms with multiple controls. However, you can also create forms manually using the FormControl and FormGroup classes, which gives you more control and flexibility over the form creation process.
+
+The bind method is used to bind the this context and the min and max parameters to the validateAge function so that they are available when the function is called. The custom validator is then called for each value change of the control and returns an error object { invalidAge: true } if the value is outside the allowed range, or null if the value is valid.
+
+The error message for the invalid age is displayed using the *ngIf directive and the form.get('age').errors?.invalidAge expression. The expression checks if the errors property of the age control is not null and if it contains an invalidAge property. If the condition is true, the error message is displayed.
