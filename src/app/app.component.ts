@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +20,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent {
   form: FormGroup | any;
 
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email])
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 }
