@@ -5,7 +5,7 @@
 - Create new component: ng generate component <component-name> or ng g c <component-name>
 - Create new module: ng generate module <module-name> or ng g m <module-name>
 - Create new directive: ng generate directive <directive-name> or ng g d <directive-name>
-- Create new service: ng generate directive <service-name> or ng g d <service-name>
+- Create new service: ng generate service <service-name> or ng g s <service-name>
 - Compile and run application: ng server
 - Run app at specific port: ng serve -- port 4300
 
