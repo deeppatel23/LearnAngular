@@ -61,3 +61,16 @@ Nowadays, the PathLocationStrategy is the preferred route strategy for Angular a
 However, the choice of route strategy depends on the specific requirements of your application and the hosting environment you are using. If your application is hosted on a server that doesn't support the full URL path, you may need to use the HashLocationStrategy.
 
 In either case, it's important to understand the trade-offs and to choose the route strategy that best fits your needs.
+
+Dynamic route parameters allow you to pass values from the URL to your component and use those values to retrieve data or display information based on the parameters.
+* In this example, the ActivatedRoute service is injected into the ProductComponent using the constructor. The route.snapshot.paramMap.get('id') method is used to retrieve the id value from the URL and store it in the id property of the component.
+* Now, when you navigate to /product/42, for example, the ProductComponent will display "Product ID: 42".
+* If you do this
+```
+ ngOnInit() {
+    this.id = +this.route.snapshot.paramMap.get('id');
+  }
+  ```
+  the you will get this error: Object is possibly 'null'.
+* The error "Object is possibly 'null'" occurs because the ActivatedRoute object may not be available at the time of retrieval. To handle this error, you can use the first() operator from the rxjs library to ensure that the ActivatedRoute object is available before attempting to retrieve the id value.
+* In this updated code, the route.params property is a Observable that emits the route parameters whenever the parameters change. The first() operator is used to retrieve the first emitted value and then the subscribe method is used to retrieve the id value. This ensures that the id value is only retrieved once the ActivatedRoute object is available.
